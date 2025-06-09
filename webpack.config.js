@@ -13,6 +13,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         template: "./template.html"
-    })
-  ]
+    }),
+  ],
+  module: {
+    rules: [
+        {
+            test:/\.css$/i,
+            user: ["style-loader", "css-loader"],
+        },
+    ],
+  },
 };
